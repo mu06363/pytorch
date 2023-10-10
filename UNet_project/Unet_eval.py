@@ -21,7 +21,8 @@ log_dir = './UNet_project/log'
 result_dir = './UNet_project/results'
 
 if not os.path.exists(result_dir):
-    os.makedirs(result_dir)
+    os.makedirs(os.path.join(result_dir, 'png'))
+    os.makedirs(os.path.join(result_dir, 'numpy'))
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
