@@ -234,10 +234,6 @@ transform = transforms.Compose([Normalization(mean=0.5, std=0.5), ToTensor()])
 dataset_test = Dataset(data_dir=os.path.join(data_dir, 'test'), transform=transform)
 loader_test = DataLoader(dataset_test, batch_size=batch_size, shuffle=False, num_workers=8)
 
-num_data_test = len(dataset_test)
-
-num_batch_test = np.ceil(num_data_test / batch_size)
-
 ## 네트워크 생성하기
 net = UNet().to(device)
 
