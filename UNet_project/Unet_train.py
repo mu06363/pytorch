@@ -49,6 +49,16 @@ train_continue = args.train_continue
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 
+print("learning rate: %.4e" % lr)
+print("batch size: %d" % batch_size)
+print("number of epoch: %d" % num_epoch)
+print("data dir: %s" % data_dir)
+print("ckpt dir: %s" % ckpt_dir)
+print("log dir: %s" % log_dir)
+print("result dir: %s" % result_dir)
+print("mode: %s" % mode)
+print("train continue: %s" % train_continue)
+
 ## 디렉토리 생성하기
 if not os.path.exists(result_dir):
     os.makedirs(os.path.join(result_dir, 'png'))
