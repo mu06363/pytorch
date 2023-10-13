@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 ##
-results_dir = './Image_reggresion_framework/result/numpy'
+results_dir = './Image_regression_framework/result/numpy'
 
 lst_data = os.listdir(results_dir)
 

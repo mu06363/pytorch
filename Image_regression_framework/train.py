@@ -27,10 +27,10 @@ parser.add_argument("--lr", default=1e-3, type=float, dest="lr")
 parser.add_argument("--batch_size", default=4, type=int, dest="batch_size")
 parser.add_argument("--num_epoch", default=100, type=int, dest="num_epoch")
 
-parser.add_argument("--data_dir", default="./Image_reggresion_framework/datasets/BSR/BSDS500/data/images", type=str, dest="data_dir")
-parser.add_argument("--ckpt_dir", default="./Image_reggresion_framework/checkpoint", type=str, dest="ckpt_dir")
-parser.add_argument("--log_dir", default="./Image_reggresion_framework/log", type=str, dest="log_dir")
-parser.add_argument("--result_dir", default="./Image_reggresion_framework/result", type=str, dest="result_dir")
+parser.add_argument("--data_dir", default="./Image_regression_framework/datasets/BSR/BSDS500/data/images", type=str, dest="data_dir")
+parser.add_argument("--ckpt_dir", default="./Image_regression_framework/checkpoint", type=str, dest="ckpt_dir")
+parser.add_argument("--log_dir", default="./Image_regression_framework/log", type=str, dest="log_dir")
+parser.add_argument("--result_dir", default="./Image_regression_framework/result", type=str, dest="result_dir")
 
 parser.add_argument("--task", default="denoising", choices=["denoising", "inpainting", "super_resolution"], type=str, dest="task")
 parser.add_argument("--opts", nargs="+", default=["random", 30.0], dest="opts")
@@ -146,7 +146,7 @@ if network == 'unet':
 ## 손실함수 정의하기
 # fn_loss = nn.BCEWithLogitsLoss().to(device)
 
-fn_loss = nn.MSEloss().to(device)
+fn_loss = nn.MSELoss().to(device)
 
 ## Optimizer 설정하기
 optim = torch.optim.Adam(net.parameters(), lr=lr)
