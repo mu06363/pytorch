@@ -33,14 +33,14 @@ parser.add_argument("--log_dir", default="./Image_regression_framework/log", typ
 parser.add_argument("--result_dir", default="./Image_regression_framework/result", type=str, dest="result_dir")
 
 parser.add_argument("--task", default="denoising", choices=["denoising", "inpainting", "super_resolution"], type=str, dest="task")
-parser.add_argument("--opts", nargs="+", default=["bilinear", 4], dest="opts")
+parser.add_argument("--opts", nargs="+", default=["bilinear", 4, 0], dest="opts")
 
 parser.add_argument("--ny", default=320, type=int, dest="ny")
 parser.add_argument("--nx", default=480, type=int, dest="nx")
 parser.add_argument("--nch", default=3, type=int, dest="nch")
 parser.add_argument("--nker", default=64, type=int, dest="nker")
 
-parser.add_argument("--network", default="resnet", choices=["unet", "hourglass", "resnet", 'srresnet'], type=str, dest="network")
+parser.add_argument("--network", default="srresnet", choices=["unet", "hourglass", "resnet", 'srresnet'], type=str, dest="network")
 parser.add_argument("--learning_type", default="plain", choices=["plain", "residual"], type=str, dest="learning_type")
 
 
