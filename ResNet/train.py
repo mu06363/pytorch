@@ -32,7 +32,7 @@ parser.add_argument("--ckpt_dir", default="./Image_regression_framework/checkpoi
 parser.add_argument("--log_dir", default="./Image_regression_framework/log", type=str, dest="log_dir")
 parser.add_argument("--result_dir", default="./Image_regression_framework/result", type=str, dest="result_dir")
 
-parser.add_argument("--task", default="denoising", choices=["denoising", "inpainting", "super_resolution"], type=str, dest="task")
+parser.add_argument("--task", default="super_resolution", choices=["denoising", "inpainting", "super_resolution"], type=str, dest="task")
 parser.add_argument("--opts", nargs="+", default=["bilinear", 4, 0], dest="opts")
 
 parser.add_argument("--ny", default=320, type=int, dest="ny")
