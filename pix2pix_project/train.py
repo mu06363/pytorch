@@ -431,7 +431,7 @@ def test(args):
                     label = fn_tonumpy(fn_denorm(label, mean=0.5, std=0.5)).squeeze()
                     output = fn_tonumpy(fn_denorm(output, mean=0.5, std=0.5)).squeeze()
                     
-                    for j in range(lael.shape[0]):
+                    for j in range(label.shape[0]):
                         
                         id = batch_size * (batch - 1) + j
 
