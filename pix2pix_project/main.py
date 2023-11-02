@@ -27,6 +27,7 @@ parser.add_argument("--nch", default=3, type=int, dest="nch")
 parser.add_argument("--nker", default=64, type=int, dest="nker")
 
 parser.add_argument("--wgt", default=1e2, type=float, dest="wgt")
+parser.add_argument('--norm', default='bnorm', choices=['bnorm', 'inorm'], dest='norm')
 
 parser.add_argument("--network", default="pix2pix", choices=['DCGAN', 'pix2pix'], type=str, dest="network")
 parser.add_argument("--learning_type", default="plain", choices=["plain", "residual"], type=str, dest="learning_type")

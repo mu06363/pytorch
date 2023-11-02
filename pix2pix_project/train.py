@@ -38,6 +38,7 @@ def train(args):
     nker = args.nker
 
     wgt = args.wgt
+    norm = args.norm
 
     network = args.network
     learning_type = args.learning_type
@@ -93,15 +94,15 @@ def train(args):
 
     ## 네트워크 생성하기
     if network == 'DCGAN':
-        netG = DCGAN(in_channels=100, out_channels=nch, nker=nker).to(device)
-        netD = Discriminator(in_channels=nch, out_channels=1, nker=nker).to(device)
+        netG = DCGAN(in_channels=100, out_channels=nch, nker=nker, norm=norm).to(device)
+        netD = Discriminator(in_channels=nch, out_channels=1, nker=nker, norm=norm).to(device)
 
         init_weights(netG, init_type='normal', init_gain=0.02)
         init_weights(netD, init_type='normal', init_gain=0.02)
 
     elif network == 'pix2pix':
-        netG = Pix2Pix(in_channels=nch, out_channels=nch, nker=nker).to(device)
-        netD = Discriminator(in_channels=2 * nch, out_channels=1, nker=nker).to(device)
+        netG = Pix2Pix(in_channels=nch, out_channels=nch, nker=nker, norm=norm).to(device)
+        netD = Discriminator(in_channels=2 * nch, out_channels=1, nker=nker, norm=norm).to(device)
 
         init_weights(netG, init_type='normal', init_gain=0.02)
         init_weights(netD, init_type='normal', init_gain=0.02)
@@ -320,6 +321,7 @@ def test(args):
     nker = args.nker
 
     wgt = args.wgt
+    norm = args.norm
 
     network = args.network
     learning_type = args.learning_type
