@@ -60,8 +60,9 @@ def train(args):
     print("log dir: %s" % log_dir)
     print("result dir: %s" % result_dir)
 
-    print("task: %s" % task)
-    print("opts: %s" % opts)
+    print("wgt_cycle: %s" % wgt_cycle)
+    print("wgt_ident: %s" % wgt_ident)
+    print("norm: %s" % norm)
 
     print("network: %s" % network)
     print("learning type: %s" % learning_type)
